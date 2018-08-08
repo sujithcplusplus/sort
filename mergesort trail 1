@@ -1,0 +1,99 @@
+#include<iostream>
+using namespace std;
+class msort
+{
+    int size;
+    public:
+    msort();
+    int arraylength(p);
+    void divide(a);
+    void conqure(l,r,a);
+    void display();
+};
+
+msort::msort()
+{
+    cout<<"enter no. of elements"<<endl;
+    cin>>size;
+    int input[size];
+    cout<<"enter elements"<<endl;
+    for(int i=0;i<size;i++)
+    cin>>input[i];
+    cout<<"elements entered are:"
+    for(int i=0;i<size;i++)
+    cout<<input[i]<<" ";
+    cout<<endl;
+}
+
+int msort::arraylength(p)
+{
+    return sizeof(p)/sizeof(*P);
+}
+
+void msort::conqure(l,r,a)
+{
+    int sl,sr,li=0,ri=0,mi=0;
+    sl=arraylength(l);
+    sr=arraylength(r);
+    
+    while(li<sl&&ri<rl)
+    {
+        if(l[li]<r[ri])
+        {
+            a[mi]=l[li];
+            li++;
+        }
+        else
+        {
+            a[mi]=r[ri];
+            ri++
+        }
+        mi++;
+    }
+    while(li>=sl)
+    {
+        a[mi]=r[ri];
+        ri++;
+    }
+    while(ri>=rl)
+    {
+        a[mi]=l[li];
+        li++;
+    }
+}
+void msort::divide(a)
+{
+    int n=arraylength(a);
+    if(n<2)
+    break;
+    int mid=n/2;
+    int left[mid];
+    int right[n-mid];
+    for(int i=0;i<mid;i++)
+    {
+        left[i]=a[i]
+    }
+    for(int j=mid;j<n-mid;j++)
+    {
+        right[j-mid]=a[j];
+    }
+    divide(left);
+    divide(right);
+    conqure(left,right,input);
+}
+void msort::display()
+{   cout<<"sorted elements are:";
+    for(int q=0;q<size;q++)
+    cout<<input[q];
+    
+}
+
+int main()
+{
+    msort array;
+    array.divide(array.input);
+    array.display();
+    
+    return 0;
+    
+}
