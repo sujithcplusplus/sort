@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+class selectionsort
+{
+    int size,p[100];
+    public:
+    selectionsort();
+    void sortlogic();
+    void display();
+    void getdata();
+};
+
+void selectionsort::getdata()
+{
+    cout<<"enter elements"<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cin>>p[i];
+    }
+    cout<<"entered elements are:"<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cout<<p[i]<<" ";
+    }
+    cout<<endl;
+}
+
+
+
+
+selectionsort::selectionsort()
+{
+    cout<<"enter no. of elements"<<endl;
+    cin>>size;
+}
+
+void selectionsort::sortlogic()
+{
+    int temp,loc,t;
+    for(int i=0;i<size;i++)
+    {
+        temp=p[i];
+        for(int j=i+1;j<size;j++)
+        {
+            if(temp>p[j])
+            {
+                temp=p[j];
+                loc=j;
+            }
+        }
+        t=p[i];
+        p[i]=p[loc];
+        p[loc]=t;
+    }
+}
+
+void selectionsort:: display()
+{
+    cout<<"sorted list is"<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cout<<p[i]<<" ";
+        
+    }
+}
+
+int main()
+{
+    selectionsort s;
+    s.getdata();
+    s.sortlogic();
+    s.display();
+    
+    return 0;
+}
