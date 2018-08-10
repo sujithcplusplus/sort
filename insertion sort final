@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+class insertionsort
+{
+    int size,p[100];
+    public:
+    insertionsort();
+    void sortlogic();
+    void display();
+    void getdata();
+};
+
+void insertionsort::getdata()
+{
+    cout<<"enter elements"<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cin>>p[i];
+    }
+    cout<<"entered elements are:"<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cout<<p[i]<<" ";
+    }
+    cout<<endl;
+}
+
+
+
+
+insertionsort::insertionsort()
+{
+    cout<<"enter no. of elements"<<endl;
+    cin>>size;
+}
+
+void insertionsort::sortlogic()
+{
+    int temp,i,j;
+    for(i=1;i<size;i++)
+    {
+        temp=p[i];
+        j=i-1;
+        while(temp<p[j]&&j>=0)
+        {
+            p[j+1]=p[j];
+            j--;
+        }
+        p[j+1]=temp;
+    }
+}
+
+void insertionsort:: display()
+{
+    cout<<"sorted list is"<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cout<<p[i]<<" ";
+        
+    }
+}
+
+int main()
+{
+    insertionsort s;
+    s.getdata();
+    s.sortlogic();
+    s.display();
+    
+    return 0;
+}
