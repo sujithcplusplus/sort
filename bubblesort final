@@ -1,0 +1,72 @@
+#include<iostream>
+using namespace std;
+class bubblesort
+{
+    int size,p[100];
+    public:
+    bubblesort();
+    void sortlogic();
+    void display();
+    void getdata();
+};
+
+void bubblesort::getdata()
+{
+    cout<<"enter elements"<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cin>>p[i];
+    }
+    cout<<"entered elements are:"<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cout<<p[i]<<" ";
+    }
+    cout<<endl;
+}
+
+
+
+
+bubblesort::bubblesort()
+{
+    cout<<"enter no. of elements"<<endl;
+    cin>>size;
+}
+
+void bubblesort::sortlogic()
+{
+    int temp;
+    for(int i=0;i<size-1;i++)
+    {
+        for(int j=0;j<size-i;j++)
+        {
+            if(p[j]>p[j+1])
+            {
+                temp=p[j];
+                p[j]=p[j+1];
+                p[j+1]=temp;
+            }
+        }
+    }
+}
+
+void bubblesort:: display()
+{
+    cout<<"sorted list is"<<endl;
+    for(int i=0;i<size;i++)
+    {
+        cout<<p[i]<<" ";
+        
+    }
+}
+
+int main()
+{
+    bubblesort s;
+    s.getdata();
+    s.sortlogic();
+    s.display();
+    
+    return 0;
+}
